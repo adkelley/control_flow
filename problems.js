@@ -8,7 +8,7 @@ function promptName() {
 
 function farenheitCelsius() {
   var f = prompt("Farenheit Temperature?");
-  alert((f-32) - 5/9);
+  alert((f-32) * 5/9);
 }
 
 
@@ -17,6 +17,7 @@ function has3Friends() {
   var i = 1;
   while (friends.length < 3) {
     friends.push(prompt("Name a friend " + i + ": "));
+    i += 1;
   }
   alert("Your friends are: " + friends);
 }
@@ -65,42 +66,37 @@ function guessNumber() {
 
 function friendsRandom() {
   var friends = [
-                ["larry", dirty]
-                ["moe", dirty]
-                ["curly", dirty]
-                ["huey", dirty]
-                ["louie", dirty]
-                ["dewey", dirty]
+                ["larry", false],
+                ["moe", false],
+                ["curly", false],
+                ["huey", false],
+                ["louie", false],
+                ["dewey", false]
                 ];
   
-  var index;
-
   function isDirty() {
-    var noDirt = true;
-    var j = 0;
+    var clean = true;
     do {
-        if (friends[j][0] === false) {
-          noDirt = false;
-        }
-        j += 1
-    } while (noDirt && j < freinds.length);
+      if (friends[i][0] === false) {
+        clean = false;
+      }
+    } while (clean && j < friends.length)
+
+    return(clean);
   }
         
-  for (var i=0; i<friends.length; i++) {
-    friends[i][0] = false;
-  }
+  var index;
 
   do {
     var index = Math.floor(Math.random() * 6)
     if (!friends[index][0]) {
-      alert("Friend: " + friends[index][0]);
+      alert("Friend: " + friends[index]);
       friends[index][0] = true;
     }
   }
   while (isDirty);
  
 }
-*/
 
 
 
@@ -118,10 +114,8 @@ window.onload = function() {
   p5.onclick = solveRiddle;
   var p6 = document.getElementById("p6");
   p6.onclick = guessNumber;
-/*
   var p7 = document.getElementById("p7");
   p7.onclick = friendsRandom;
-*/
 };
 
 
