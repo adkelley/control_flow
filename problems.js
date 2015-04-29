@@ -52,7 +52,7 @@ function guessNumber() {
   var answer = Math.floor(Math.random() * 100);
   var guess;
   do {
-    guess = Math.floor(parseInt(prompt("Guess a number between 1 & 100")));
+    guess = parseInt(prompt("Guess a number between 1 & 100"));
     if (guess < answer)
       alert("Guess higher")
     else if (guess > answer)
@@ -63,10 +63,45 @@ function guessNumber() {
     
 }
 
-/*
 function friendsRandom() {
+  var friends = [
+                ["larry", dirty]
+                ["moe", dirty]
+                ["curly", dirty]
+                ["huey", dirty]
+                ["louie", dirty]
+                ["dewey", dirty]
+                ];
+  
+  var index;
+
+  function isDirty() {
+    var noDirt = true;
+    var j = 0;
+    do {
+        if (friends[j][0] === false) {
+          noDirt = false;
+        }
+        j += 1
+    } while (noDirt && j < freinds.length);
+  }
+        
+  for (var i=0; i<friends.length; i++) {
+    friends[i][0] = false;
+  }
+
+  do {
+    var index = Math.floor(Math.random() * 6)
+    if (!friends[index][0]) {
+      alert("Friend: " + friends[index][0]);
+      friends[index][0] = true;
+    }
+  }
+  while (isDirty);
+ 
 }
 */
+
 
 
 window.onload = function() {
@@ -88,3 +123,44 @@ window.onload = function() {
   p7.onclick = friendsRandom;
 */
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
